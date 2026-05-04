@@ -37,3 +37,6 @@ int main(){
     cin>>t;
     for(int i=1;i<=t;i++)logic();
 }
+
+
+//I missed one easy logic here...like if the first element of the vector is 1, then the vector can b sorted
