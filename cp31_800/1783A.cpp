@@ -1,27 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 void logic()
 {
     int n;
     cin >> n;
     vector<int> a(n);
-    vector<int> hash(n);
-    int sum=0;
+    bool allsame = true;
     for (int i = 0; i < n; i++)
     {
         cin >> a[i];
-        hash[i]=sum;
-        sum+=a[i];
-    }
-    for(int i=1;i<n;i++){
-        if(hash[i]==a[i]){
-            if(a[i]!=a[0]){
-                swap(a[i],a[0]);
-            }
+        if (i != 0)
+        {
+            if (a[i] != a[i - 1])
+                allsame = false;
         }
     }
-
+    if (allsame==true){
+        cout<<"NO"<<endl;
+    }else{
+        for(int i=n-1;i>=1;i--){
+            swap(a[i],a[i-1]);
+        }
+        cout<<"YES"<<endl;
+        for(int x : a)
+        cout<<x<<" ";
+        cout<<endl;
+    }
 }
 
 int main()
